@@ -9,6 +9,8 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Booking, Menu
 from .serializers import BookingSerializer, MenuSerializer
 
+def index(request):
+    return render(request, 'index.html')
 
 class menuItemsView(ListCreateAPIView):
     queryset = Menu.objects.all()
