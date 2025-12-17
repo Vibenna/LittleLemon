@@ -11,12 +11,10 @@ from .serializers import BookingSerializer, MenuSerializer
 
 
 class menuItemsView(ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
 class singleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
-    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
@@ -24,7 +22,6 @@ class bookingViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    # permission_classes = [permissions.IsAuthenticated] 
     
 
 @api_view()
